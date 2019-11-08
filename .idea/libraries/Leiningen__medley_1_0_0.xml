@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: medley:1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.m2/medley/medley/1.0.0/medley-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

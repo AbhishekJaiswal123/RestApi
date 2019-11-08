@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: org.clojure/clojure:1.10.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.m2/org/clojure/clojure/1.10.0/clojure-1.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

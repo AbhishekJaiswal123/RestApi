@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: ring/ring-defaults:0.3.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.m2/ring/ring-defaults/0.3.2/ring-defaults-0.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

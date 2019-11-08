@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 07 12:48:53 IST 2019
+tools.nrepl-0.2.13.jar>central=
+tools.nrepl-0.2.13.pom>central=
