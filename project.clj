@@ -10,6 +10,7 @@
                  [ring/ring-defaults "0.3.2"]
                  [org.clojure/data.json "0.2.6"]
                  [nrepl "0.6.0"]
+                 [org.clojure/core.async "0.3.443"]
                  [cider/cider-nrepl "0.22.4"]]
   :main ^:skip-aot restapi.core
   :target-path "target/%s"

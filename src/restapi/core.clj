@@ -7,15 +7,29 @@
             [clojure.string :as str]
             [clojure.data.json :as json]
             [cider.nrepl :as cider-nrepl]
-            [nrepl.server :refer [start-server stop-server]])
+            [clojure.walk :as walk]
+            [nrepl.server :refer [start-server stop-server]]
+            [clojure.core.async :as a :refer [>! <! >!! <!! go chan buffer close! thread alts! alts!! timeout]])
   (:gen-class))
 
+
+(defn- wrap-uri-check [expected-uri handler]
+  (fn [{:keys [uri] :as req}]
+    (when (= uri expected-uri)
+      (handler req))))
+
+(defn hello-handler [req]
+  (wrap-uri-check "/hello" (fn [req] {:status  200
+                                      :headers {"Content-Type" "text/html"}
+                                      :body    (->
+                                                 (pp/pprint req)
+                                                 (str "Hello 12224 " (:name (:params req))))})))
 
 ; Simple Body Page
 (defn simple-body-page [req]
   {:status  200
    :headers {"Content-Type" "text/html"}
-   :body    "Hello World"})
+   :body    "Hello Worldsdsd"})
 
 ; request-example
 (defn request-example [req]
@@ -30,13 +44,13 @@
    :headers {"Content-Type" "text/html"}
    :body    (->
               (pp/pprint req)
-              (str "Hello 123 " (:name (:params req))))})
+              (str "Hello 12223 " (:name (:params req))))})
 
 
 (defroutes app-routes
  (GET "/" [] simple-body-page)
  (GET "/request" [] request-example)
- (GET "/hello" [] hello-name)
+ (GET "/hello" [] hello-handler)
  (route/not-found "Error, page not found"))
 
 (defn- start-nrepl [{:keys [port]}]
